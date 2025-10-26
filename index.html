@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avalon NAS</title>
+  <meta name="description" content="Quick launchpad for Antonin's NAS services. Public links and Tailnet-only links." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;        /* slate-800 */
+      --muted: #6b7280;       /* gray-500 */
+      --card: #f8fafc;        /* slate-50 */
+      --border: #e5e7eb;      /* gray-200 */
+      --primary: #2563eb;     /* blue-600 */
+      --primary-weak: #dbeafe;/* blue-100 */
+      --accent: #10b981;      /* emerald-500 */
+      --accent-weak: #d1fae5; /* emerald-100 */
+      --warning: #f59e0b;     /* amber-500 */
+      --warning-weak: #fef3c7;/* amber-100 */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.45;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 16px 56px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 40px; height: 40px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--primary-weak), var(--accent-weak));
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      font-weight: 800; color: var(--primary);
+    }
+
+    h1 { font-size: 1.25rem; margin: 0; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; }
+
+    .notice {
+      background: var(--warning-weak);
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px 0;
+    }
+
+    section { margin-top: 24px; }
+    section h2 {
+      font-size: 1.05rem;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      letter-spacing: .2px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat( auto-fill, minmax(220px, 1fr) );
+      gap: 12px;
+    }
+
+    .tile {
+      display: block;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px 14px 12px 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .06s ease, box-shadow .12s ease, border-color .12s ease;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+
+    .tile:hover {
+      transform: translateY(-1px);
+      border-color: #c7d2fe; /* indigo-200 */
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .tile .top { display: flex; align-items: center; gap: 10px; }
+    .icon-img { width: 18px; height: 18px; object-fit: contain; display: block; }
+    .tile .name {
+      font-weight: 700; font-size: 1.02rem;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .tile .url { color: var(--muted); font-size: 0.9rem; margin-top: 6px; word-break: break-word; }
+
+    .row { display: flex; align-items: center; gap: 8px; }
+
+    footer { margin-top: 36px; color: var(--muted); font-size: .9rem; text-align: center; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tile { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">        <div>
+          <h1>Avalon NAS</h1>
+          <div class="subtitle">Quick links for public and Tailnet-only services</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- PUBLIC SECTION -->
+    <section aria-labelledby="public-heading">
+      <h2 id="public-heading">Public</h2>
+      <div class="grid">
+        <a class="tile" href="https://avalon.totob12.com" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://www.vectorlogo.zone/logos/plextv/plextv-icon.svg" alt="Plex logo" />
+            <div class="name">Plex</div>
+            
+          </div>
+          <div class="url">https://avalon.totob12.com</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TAILNET SECTION -->
+    <section aria-labelledby="tailnet-heading">
+      <h2 id="tailnet-heading">Tailnet</h2>
+      <div class="grid">
+        <a class="tile" href="https://avalon.tahr-vibe.ts.net" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://www.vectorlogo.zone/logos/bitwarden/bitwarden-icon.svg" alt="Bitwarden logo" />
+            <div class="name">Bitwarden (Vaultwarden)</div>
+            
+          </div>
+          <div class="url">https://avalon.tahr-vibe.ts.net</div>
+        </a>
+
+        <a class="tile" href="http://100.89.191.49" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Anytype_logo_%28B%26W%29.svg" alt="Anytype logo" />
+            <div class="name">Anytype</div>
+            
+          </div>
+          <div class="url">http://100.89.191.49</div>
+        </a>
+
+        <a class="tile" href="http://avalon:5000" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://raw.githubusercontent.com/Kareadita/Kavita/develop/Logo/kavita.svg" alt="Kavita logo" />
+            <div class="name">Kavita</div>
+            
+          </div>
+          <div class="url">http://avalon:5000</div>
+        </a>
+
+        <a class="tile" href="http://avalon:8070" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Kiwix_logo_v3.svg" alt="Kiwix logo" />
+            <div class="name">Kiwix — Full Wikipedia</div>
+            
+          </div>
+          <div class="url">http://avalon:8070</div>
+        </a>
+
+        <a class="tile" href="http://avalon:8200" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/speedtest-tracker.png" alt="Speedtest Tracker logo" />
+            <div class="name">Speedtest-Tracker</div>
+            
+          </div>
+          <div class="url">http://avalon:8200</div>
+        </a>
+
+        <a class="tile" href="http://avalon:34400" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/threadfin.svg" alt="Threadfin logo" />
+            <div class="name">Threadfin</div>
+            
+          </div>
+          <div class="url">http://avalon:34400</div>
+        </a>
+
+        <a class="tile" href="http://avalon:8090" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://upload.wikimedia.org/wikipedia/commons/6/66/New_qBittorrent_Logo.svg" alt="qBittorrent logo" />
+            <div class="name">qBittorrent</div>
+            
+          </div>
+          <div class="url">http://avalon:8090</div>
+        </a>
+
+        <a class="tile" href="http://avalon:3001" target="_blank" rel="noopener noreferrer">
+          <div class="top">
+            <img class="icon-img" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg" alt="Uptime Kuma logo" />
+            <div class="name">Uptime-Kuma</div>
+            
+          </div>
+          <div class="url">http://avalon:3001</div>
+        </a>
+      </div>
+
+      
+    </section>
+
+    
+  </div>
+</body>
+</html>
